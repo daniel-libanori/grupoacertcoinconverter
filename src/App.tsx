@@ -1,10 +1,15 @@
+import React from 'react'
+
+/*Components*/
+import Routes from './routes/Routes'
 
 
-function App() {
+/* HOC Component Holder and Fixed Header*/
+const App : React.FC = () => {
   return (
-    <div className="App">
-      teste
-    </div>
+    <>
+      <Routes/>
+    </>
   );
 }
 
