@@ -16,6 +16,7 @@ const Routes : React.FC = () => {
                 <Route path="/signup" component={Signup}/>
                 <Route path="/wallet" component={Wallet}/>
                 <Route path="/transactions" component={Transactions}/>
+                <Route component={() => <Redirect to="/" />} />
             </Switch>
         </BrowserRouter>
     );
