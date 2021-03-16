@@ -1,8 +1,13 @@
 import React from 'react'
+import fireBaseConfig from '../../firebase/firebase'
 
 const Wallet : React.FC = () => {
 
-    return (<h1>wallet</h1>)
+    return (
+    <>
+        wallet
+        <button onClick={()=>fireBaseConfig.auth().signOut()}>Delogar</button>
+    </>)
 }
 
 export default Wallet
