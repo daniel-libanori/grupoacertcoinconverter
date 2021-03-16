@@ -11,12 +11,13 @@ const StyledButton = styled(Button)({
 interface INTFCustomButton{
     children: string;
     onClick?: () => void;
+    type?: "button" | "submit" | "reset" | undefined;
 }
 
-const CustomButton : React.FC <INTFCustomButton>= ({children, onClick}) =>{
+const CustomButton : React.FC <INTFCustomButton>= ({children, onClick, type}) =>{
 
     return(
-        <StyledButton type="button" variant="contained" onClick={onClick}>
+        <StyledButton type={type ? type : "button"} variant="contained" onClick={onClick}>
             {children}
         </StyledButton>
     )

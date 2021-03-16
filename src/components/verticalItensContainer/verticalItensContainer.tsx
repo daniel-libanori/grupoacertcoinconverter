@@ -15,10 +15,10 @@ interface INTFVerticalItensContainer {
 }
 
 
-const VerticalItensContainer : React.FC <INTFVerticalItensContainer> = ({children, maxWidth}) =>{
+const VerticalItensContainer : React.FC <INTFVerticalItensContainer> = ({children, maxWidth, ...others}) =>{
     
     return(
-        <StyledVerticalContainer maxWidth={maxWidth}>
+        <StyledVerticalContainer maxWidth={maxWidth} {...others}>
             {children}
         </StyledVerticalContainer>
         

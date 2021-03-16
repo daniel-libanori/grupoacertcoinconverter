@@ -11,19 +11,19 @@ const StyledCustomTextField = styled(TextField)({
 
 
 interface INTFCustomTextField{
-    label: string;
-    name: string;
-    margin: string;
+    label?: string;
+    name?: string;
+    margin?: string;
+    type?: string;
 }
  
 
-const CustomTextField : React.FC <INTFCustomTextField>= () => {
+const CustomTextField : React.FC <INTFCustomTextField>= ({label,name,type,margin}) => {
     return(
         <StyledCustomTextField
-            label="Insira aqui seu e-mail..."
-            name="email"
-            margin="none"
-        
+            label={label}
+            name={name}
+            type={type}
         />
 
     )
