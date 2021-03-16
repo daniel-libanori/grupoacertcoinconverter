@@ -3,7 +3,7 @@ import React , {useContext, useCallback} from 'react'
 import { Form } from 'react-final-form';
 
 /* Components */
-import VerticalItensContainer from '../../components/verticalItensContainer/verticalItensContainer'
+import VerticalItensContainer from '../../components/containers/verticalItensContainer'
 import CustomButton from '../../components/button/Button'
 import CustomTextField from '../../components/textInput/textInput'
 import TextLink from '../../components/textLink/textLink'
@@ -29,13 +29,12 @@ const Home : React.FC = () => {
                 console.log(error);
             }
         }
-    ,[history]
-  );
+    ,[history]);
 
 
     if (context?.user) {
-        return <Redirect to="/signin" />;
-      }
+        return <Redirect to="/wallet" />;
+    }
 
     return(
         <>
