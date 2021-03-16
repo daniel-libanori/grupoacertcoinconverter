@@ -7,6 +7,8 @@ import Signup from "../pages/signup/signup"
 import Wallet from '../pages/wallet/Wallet'
 import Transactions from '../pages/transactions/transactions'
 
+import PrivateRoute from './PrivateRoute'
+
 const Routes : React.FC = () => {
     return(
         <BrowserRouter>
@@ -14,9 +16,9 @@ const Routes : React.FC = () => {
                 <Route path="/" exact render={() => <Redirect to="/signin" />}/>
                 <Route path="/signin" component={Signin}/>
                 <Route path="/signup" component={Signup}/>
-                <Route path="/wallet" component={Wallet}/>
-                <Route path="/transactions" component={Transactions}/>
-                <Route component={() => <Redirect to="/" />} />
+                <PrivateRoute path="/wallet" component={Wallet}/>
+                <PrivateRoute path="/transactions" component={Transactions}/>
+                
             </Switch>
         </BrowserRouter>
     );
