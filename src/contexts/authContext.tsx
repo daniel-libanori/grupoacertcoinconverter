@@ -3,6 +3,8 @@ import fireBaseConfig , {authFireBase}from '../firebase/firebase'
 
 import firebase from "firebase/app"
 
+import Spinner from '../components/spinner/spinner'
+
 interface INTFAuthProvider{
     user: firebase.User | null;
     loading: Boolean;
@@ -23,7 +25,7 @@ export const AuthProvider : React.FC = ({ children }) => {
   }, []);
 
   if (loading) {
-    return <React.Fragment>Loading...</React.Fragment>;
+    return <Spinner/>;
   }
 
   return (

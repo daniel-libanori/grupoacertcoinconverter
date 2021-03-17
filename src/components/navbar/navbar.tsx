@@ -1,42 +1,81 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import React, {useEffect, useState} from 'react';
 
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-  },
-});
+import {useHistory, Redirect} from 'react-router-dom'
+import {styled} from '@material-ui/core'
 
-interface INTFNavBar{
-    tabs: string[]
+import HorizontalItemsContainer from '../containers/horizontalItensContainer'
+
+interface INTFtabsAndLinks{
+    tab: string;
+    link: string
 }
 
+interface INTFNavBar{
+    tabsAndLinks: INTFtabsAndLinks[]
+}
 
-const NavBar : React.FC <INTFNavBar>= ({tabs}) => {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+const StyledItemNavBar = styled("button")({
+  all: "unset",
+  borderBottomStyle: "solid",
+  borderWidth:"2px",
 
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-    setValue(newValue);
-  };
+  fontSize: "18px",
+
+  margin: "3px 15px",
+  padding: "0px 10px",
+
+  "&:hover":{
+    color: "red"
+  }
+ 
+})
+
+const StyledSelectedItemNavBar = styled("button")({
+  all: "unset",
+  borderBottomStyle: "solid",
+  borderWidth:"2px",
+  color:"red",
+  fontSize: "18px",
+
+  margin: "3px 15px",
+  padding: "0px 10px",
+
+  "&:hover":{
+    color: "red"
+  }
+ 
+})
+
+const StyledAdjustNavBar = styled("div")({
+  display: "flex",
+  justifyContent:"center"
+ 
+})
+
+const NavBar : React.FC <INTFNavBar>= ({tabsAndLinks}) => {
+
+  const history = useHistory();
+  const [value,setValue] = useState(-1);
+
+  const onClickHandler = (index : any) =>{
+    setValue(index);
+  }
 
   return (
-    <Paper className={classes.root}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        centered
-      >
-        {tabs.map((tab,index)=>{
-            return <Tab label={tab} key={index}/>
-        })}
-      </Tabs>
-    </Paper>
+    <>
+      <StyledAdjustNavBar>
+
+        {tabsAndLinks.map(({tab,link},index)=>{
+          return (window.location.pathname == link ?
+            <StyledSelectedItemNavBar onClick={() => {onClickHandler(index)}} key={index}>{tab}</StyledSelectedItemNavBar> :
+            <StyledItemNavBar onClick={() => {onClickHandler(index)}} key={index}>{tab}</StyledItemNavBar>)})}
+
+      </StyledAdjustNavBar>
+
+      {value !==-1 ? <Redirect to={tabsAndLinks[value].link}/> : null}
+    </>      
+ 
+   
   );
 }
 
