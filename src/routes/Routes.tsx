@@ -6,6 +6,7 @@ import Signin from "../pages/signin/signin"
 import Signup from "../pages/signup/signup"
 import Wallet from '../pages/wallet/Wallet'
 import Transactions from '../pages/transactions/transactions'
+import Extract from '../pages/extract/Extract'
 
 import PrivateRoute from './PrivateRoute'
 
@@ -18,6 +19,7 @@ const Routes : React.FC = () => {
                 <Route path="/signup" component={Signup}/>
                 <PrivateRoute path="/wallet" component={Wallet}/>
                 <PrivateRoute path="/transactions" component={Transactions}/>
+                <PrivateRoute path="/extract" component={Extract}/>
                 
             </Switch>
         </BrowserRouter>

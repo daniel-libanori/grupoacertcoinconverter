@@ -12,9 +12,11 @@ interface INTFAuthedRoute{
 const PrivateRoute : React.FC <INTFAuthedRoute>= ({ component: RouteComponent, ...other }) => {
   const {user} = useContext(AuthContext);
 
+  const tabsAndLinks = [{tab:"Carteira", link:"/wallet"},{tab:"Fazer Conversão", link:"/transactions"},{tab:"Extrato", link:"/extract"} ]
+
   return (
     <>
-      {!!user ? <NavBar tabs={["Carteira","Fazer Conversão", "Extrato"]}/> : null}
+      {!!user ? <NavBar tabsAndLinks={tabsAndLinks}/> : null}
       <Route
         render={(routeProps) =>
           !!user ? <RouteComponent {...routeProps} /> : <Redirect to="/" />
