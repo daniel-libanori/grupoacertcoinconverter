@@ -9,21 +9,23 @@ import NavBar from './components/navbar/navbar'
 import CustomThemeProvider from './styles/globalTheme'
 import {AuthProvider, AuthContext} from './contexts/authContext'
 
+import './styles/globalCss.css'
+
 /* HOC Component Holder and Fixed Header*/
 const App : React.FC = () => {
 
   const {user} = useContext(AuthContext)
 
   return (
-    <>
+    <div className="global">
       <AuthProvider>
         <CustomThemeProvider>
           <Logo/>
-          <NavBar tabs={["Carteira","Fazer Conversão", "Extrato"]}/>
+          
           <Routes/>
         </CustomThemeProvider>
       </AuthProvider>
-    </>
+    </div>
   );
 }
 
