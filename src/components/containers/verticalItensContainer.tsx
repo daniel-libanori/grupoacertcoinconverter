@@ -11,7 +11,7 @@ const StyledVerticalContainer = styled(Container)({
 
 interface INTFVerticalItensContainer {
     children: JSX.Element | JSX.Element[]
-    maxWidth: false | undefined | 'lg' | 'md'| 'sm'| 'xl'| 'xs'
+    maxWidth?: false | undefined | 'lg' | 'md'| 'sm'| 'xl'| 'xs'
 }
 
 
