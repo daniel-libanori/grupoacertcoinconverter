@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Coin Converter App
 
 ## Available Scripts
 
@@ -11,36 +9,39 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Case
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a digital wallet simulation. In this app you can change your money between Reais, Bitcoins and Britas (Digital Coin in the same cotation of dolar) . You will start with R$100.000,00, then you can trade. Don't forget, the values between trades are diferents when you buy and sell a value.
 
-### `npm run build`
+## Functionalities
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Login
+- SignUp
+- See your Wallet with all your money
+- Trade your money
+- See the extract of the transactions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployed Version
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+...
 
-### `npm run eject`
+## Prerequisites
+ - Node.js
+ - NPM
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Built With
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React
+- React Router DOM
+- TypeScript
+- Axios
+- Firebase
+- Material UI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Built With (In implamentation)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- React Final Form
+- StoryBook
+- React Testing Library
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
