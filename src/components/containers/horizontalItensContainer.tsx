@@ -1,11 +1,14 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
 import { Container, styled } from '@material-ui/core';
 
 const StyledVerticalContainer = styled(Container)({
     display: "flex",
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: 'center',
+    "@media (max-width: 1000px)":{
+        flexDirection:"column",
+        justifyContent:"spaceBetween"
+    }
 
 })
 

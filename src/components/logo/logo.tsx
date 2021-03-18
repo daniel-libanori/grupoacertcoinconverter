@@ -7,7 +7,15 @@ import {styled} from '@material-ui/core'
 const StyledImg = styled('img')({
     maxWidth: "500px",
     marginTop: "5vh",
-    marginBottom: "5vh"
+    marginBottom: "5vh",
+    
+    "@media (max-width: 720px)":{
+        maxWidth: "40vw"
+    },
+
+    "@media (max-width: 600px)":{
+        maxWidth: "80vw"
+    }
 })
 
 const StyledImgDiv = styled('div')({

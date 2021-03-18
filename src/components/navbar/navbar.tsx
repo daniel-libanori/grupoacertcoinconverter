@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
-import {useHistory, Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import {styled} from '@material-ui/core'
 
-import HorizontalItemsContainer from '../containers/horizontalItensContainer'
 
 interface INTFtabsAndLinks{
     tab: string;
@@ -36,6 +35,7 @@ const StyledSelectedItemNavBar = styled("button")({
   borderWidth:"2px",
   color:"red",
   fontSize: "18px",
+  textAlign: "center",
 
   margin: "3px 15px",
   padding: "0px 10px",
@@ -54,7 +54,6 @@ const StyledAdjustNavBar = styled("div")({
 
 const NavBar : React.FC <INTFNavBar>= ({tabsAndLinks}) => {
 
-  const history = useHistory();
   const [value,setValue] = useState(-1);
 
   const onClickHandler = (index : any) =>{
