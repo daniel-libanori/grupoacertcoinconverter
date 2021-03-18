@@ -12,15 +12,19 @@ const StyledMoneySymbol = styled("h3")({
 })
 
 interface INTFMoneySymbol {
-    symbol: String;
+    symbol: string | String;
 }
 
 const MoneySymbol : React.FC <INTFMoneySymbol>= ({symbol}) => {
 
     return(
-        <StyledMoneySymbol>
-            {symbol}
-        </StyledMoneySymbol>
+        <>
+        {!!symbol ?
+            <StyledMoneySymbol>
+                {symbol}
+            </StyledMoneySymbol>:<div style={{width:150, height:150}}/>
+        }
+        </>
     )
 
 
