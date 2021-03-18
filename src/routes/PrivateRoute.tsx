@@ -3,6 +3,9 @@ import { Route, Redirect } from 'react-router-dom';
 import { AuthContext } from '../contexts/authContext';
 
 import NavBar from '../components/navbar/navbar'
+import fireBaseConfig from '../firebase/firebase'
+
+import LogoutLink from '../components/logoutLink/logoutlink'
 
 interface INTFAuthedRoute{
   component: any;
@@ -23,6 +26,7 @@ const PrivateRoute : React.FC <INTFAuthedRoute>= ({ component: RouteComponent, .
         }
         {...other}
       />
+      {!!user ? <LogoutLink action={()=>fireBaseConfig.auth().signOut()}>Deslogar</LogoutLink> : null}
     </>
   );
 };
