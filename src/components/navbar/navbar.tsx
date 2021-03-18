@@ -25,7 +25,7 @@ const StyledItemNavBar = styled("button")({
   padding: "0px 10px",
 
   "&:hover":{
-    color: "red"
+    color: "#34D446"
   }
  
 })
@@ -34,7 +34,7 @@ const StyledSelectedItemNavBar = styled("button")({
   all: "unset",
   borderBottomStyle: "solid",
   borderWidth:"2px",
-  color:"red",
+  color:"#28A136",
   fontSize: "18px",
   textAlign: "center",
 
@@ -42,7 +42,7 @@ const StyledSelectedItemNavBar = styled("button")({
   padding: "0px 10px",
 
   "&:hover":{
-    color: "red"
+    color: "#34D446"
   }
  
 })

@@ -5,18 +5,18 @@ import {styled} from '@material-ui/core'
 
 const StyledImg = styled('img')({
     maxWidth: "200px",
-    marginTop: "5vh",
-    marginBottom: "5vh",
+    marginTop: "2vh",
+    marginBottom: "2vh",
     
     "@media (max-width: 1000px)":{
-        margin:"140px",
+        margin:"15vw",
         maxWidth: "40vw",
         transform: "rotate(90deg)"
     },
-    "@media (max-width: 720px)":{
-        maxWidth: "40vw",
-        transform: "rotate(90deg)"
-    },
+
+    "@media only screen and (hover: none) and (pointer: coarse)and (max-width: 1000px)":{
+        margin: 20
+    }
 
 })
 
