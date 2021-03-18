@@ -20,7 +20,7 @@ const StyledBorderValueShow = styled('div')({
 
 interface INTFBordedValueShow {
     symbol: String
-    children?: number;
+    children?: number | string;
 }
 
 const BordedValueShow : React.FC <INTFBordedValueShow>= ({symbol, children}) => {

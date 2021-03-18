@@ -12,6 +12,8 @@ import {Redirect, useHistory} from 'react-router-dom'
 import {AuthContext} from '../../contexts/authContext'
 import fireBaseConfig from '../../firebase/firebase'
 
+import TextField from '@material-ui/core/TextField';
+
 const Home : React.FC = () => {
 
     const context = useContext(AuthContext);
@@ -44,16 +46,18 @@ const Home : React.FC = () => {
                 <form onSubmit={loginHandler}>
                     <VerticalItensContainer maxWidth="lg">
                         <p>Login</p>
-                        <CustomTextField
+                        <TextField
                             label="Insira aqui seu e-mail..."
                             name="email"
                             margin="none"
+                            style={{width: 350}}
                         />
-                        <CustomTextField
+                        <TextField
                             label="Insira aqui sua senha..."
                             name="password"
                             margin="none"
                             type="password"
+                            style={{width: 350}}
                         />
                         <CustomButton type="submit">
                             Entrar

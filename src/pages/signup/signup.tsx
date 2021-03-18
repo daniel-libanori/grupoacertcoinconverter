@@ -10,6 +10,8 @@ import { Form } from 'react-final-form';
 import {useHistory} from 'react-router-dom'
 import fireBaseConfig from '../../firebase/firebase'
 
+import TextField from '@material-ui/core/TextField';
+
 const Signup : React.FC = () =>{
 
     const history = useHistory();
@@ -37,16 +39,18 @@ const Signup : React.FC = () =>{
                 <form onSubmit={loginHandler}>
                     <VerticalItensContainer maxWidth="lg">
                         <p>Cadastro</p>
-                        <CustomTextField
+                        <TextField
                             label="Insira aqui seu e-mail..."
                             name="email"
                             margin="none"
+                            style={{width: 350}}
                         />
-                        <CustomTextField
+                        <TextField
                             label="Insira aqui sua senha..."
                             type="password"
                             name="password"
                             margin="none"
+                            style={{width: 350}}
                         />
 
                         <CustomButton type="submit">

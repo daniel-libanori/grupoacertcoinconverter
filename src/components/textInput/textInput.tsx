@@ -16,16 +16,15 @@ interface INTFCustomTextField{
     margin?: string;
     type?: string;
     width?: string;
-    defaultValue?: string;
+    value?: string | undefined;
     disabledTextField?: boolean;
     onChange?: any;
-    forceUpdate?: boolean;
 }
  
 
-const CustomTextField : React.FC <INTFCustomTextField>= ({label,name,type,margin,width,defaultValue,disabledTextField,onChange,forceUpdate}) => {
+const CustomTextField : React.FC <INTFCustomTextField>= ({label,name,type,margin,width,value,disabledTextField,onChange}) => {
     
-    const [forcingUpdate, setForcingUpdate] = useState(forceUpdate)
+    const [textValue, setTextValue] = useState<undefined | string>()
     
     const hadleChange = (event : any)=>{
         if(!onChange) return;
@@ -33,8 +32,18 @@ const CustomTextField : React.FC <INTFCustomTextField>= ({label,name,type,margin
     }
 
     useEffect(()=>{
-        setForcingUpdate(!forceUpdate)
-    },[forceUpdate])
+        
+        if(typeof(value)==='string'){
+            setTextValue(value)
+        }
+
+
+        if(!value) {
+            setTextValue("0")
+        }
+            
+        console.log(value)
+    },[value])
 
     return(
         <StyledCustomTextField
@@ -42,7 +51,7 @@ const CustomTextField : React.FC <INTFCustomTextField>= ({label,name,type,margin
             name={name}
             type={type}
             style={{width: width}}
-            defaultValue={defaultValue}
+            value={textValue}
             disabled={disabledTextField}
             onChange={hadleChange}
         />
