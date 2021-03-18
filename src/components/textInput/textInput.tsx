@@ -28,6 +28,7 @@ const CustomTextField : React.FC <INTFCustomTextField>= ({label,name,type,margin
     const [forcingUpdate, setForcingUpdate] = useState(forceUpdate)
     
     const hadleChange = (event : any)=>{
+        if(!onChange) return;
         onChange(event?.target.value as number)
     }
 
