@@ -17,7 +17,7 @@ export const getDolarToday = async () => {
         const stringDate = (date.getMonth()+1) + "-" + (date.getDate()-1) + "-" + date.getFullYear(); 
 
         const request = await api.get(`CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='0${stringDate}'&%24format=json`);
-        debugger
+        
         if(request.data.value.length > 0) return request.data.value[0];
         else return null
 
