@@ -48,8 +48,8 @@ const StyledSelectedItemNavBar = styled("button")({
 
 const StyledAdjustNavBar = styled("div")({
   display: "flex",
-  justifyContent:"center"
- 
+  justifyContent:"center",
+  marginBottom: "50px"
 })
 
 const NavBar : React.FC <INTFNavBar>= ({tabsAndLinks}) => {
