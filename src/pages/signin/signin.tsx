@@ -1,19 +1,22 @@
-import React , {useCallback} from 'react'
+import React , {useContext, useCallback} from 'react'
 
+import { Form } from 'react-final-form';
+
+/* Components */
 import VerticalItensContainer from '../../components/containers/verticalItensContainer'
 import CustomButton from '../../components/button/Button'
 import CustomTextField from '../../components/textInput/textInput'
 import TextLink from '../../components/textLink/textLink'
 
-import { Form } from 'react-final-form';
-
-import {useHistory} from 'react-router-dom'
+import {Redirect, useHistory} from 'react-router-dom'
+import {AuthContext} from '../../contexts/authContext'
 import fireBaseConfig from '../../firebase/firebase'
 
 import TextField from '@material-ui/core/TextField';
 
-const Signup : React.FC = () =>{
+const Home : React.FC = () => {
 
+    const context = useContext(AuthContext);
     const history = useHistory();
 
     const loginHandler = useCallback(
@@ -22,14 +25,18 @@ const Signup : React.FC = () =>{
             const { email, password } = event.target.elements;
         
             try {
-                await fireBaseConfig.auth().createUserWithEmailAndPassword(email.value, password.value);
-                history.push('/');
+                await fireBaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
+                history.push('/wallet');
             } catch (error) {
                 console.log(error);
             }
         }
     ,[history]);
 
+
+    if (context?.user) {
+        return <Redirect to="/wallet" />;
+    }
 
     return(
         <>
@@ -38,7 +45,7 @@ const Signup : React.FC = () =>{
             render={() => 
                 <form onSubmit={loginHandler}>
                     <VerticalItensContainer maxWidth="lg">
-                        <p>Cadastro</p>
+                        <p>Login</p>
                         <TextField
                             label="Insira aqui seu e-mail..."
                             name="email"
@@ -47,18 +54,16 @@ const Signup : React.FC = () =>{
                         />
                         <TextField
                             label="Insira aqui sua senha..."
-                            type="password"
                             name="password"
                             margin="none"
+                            type="password"
                             style={{width: 350}}
                         />
-
                         <CustomButton type="submit">
-                            Criar Cadastro
+                            Entrar
                         </CustomButton>
-
-                        <TextLink to="/signin">
-                            Já é cadastrado? Clique aqui
+                        <TextLink to="/signup">
+                            Cadastre Aqui
                         </TextLink>
                     </VerticalItensContainer>
 
@@ -66,6 +71,12 @@ const Signup : React.FC = () =>{
             />
 
         </>
+        
+
+            
+        
     );
+
 }
-export default Signup;
+
+export default Home;
