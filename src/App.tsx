@@ -8,6 +8,7 @@ import NavBar from './components/navbar/navbar'
 /* HOC and Context*/
 import CustomThemeProvider from './styles/globalTheme'
 import {AuthProvider, AuthContext} from './contexts/authContext'
+import {MoneyProvider} from './contexts/moneyContext'
 
 import './styles/globalCss.css'
 
@@ -19,11 +20,13 @@ const App : React.FC = () => {
   return (
     <div className="global">
       <AuthProvider>
-        <CustomThemeProvider>
-          <Logo/>
-          
-          <Routes/>
-        </CustomThemeProvider>
+        <MoneyProvider>
+          <CustomThemeProvider>
+            <Logo/>
+            
+            <Routes/>
+          </CustomThemeProvider>
+        </MoneyProvider>
       </AuthProvider>
     </div>
   );
