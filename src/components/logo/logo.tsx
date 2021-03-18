@@ -1,5 +1,4 @@
-import react from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react'
 
 import image from '../../assets/CoinConverterLogo.png'
 import {styled} from '@material-ui/core'

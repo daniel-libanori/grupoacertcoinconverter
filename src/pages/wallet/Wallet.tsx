@@ -1,7 +1,5 @@
 import React, { useContext } from 'react'
 
-
-import VerticalItensContainer from '../../components/containers/verticalItensContainer'
 import HorizontalItensContainer from '../../components/containers/horizontalItensContainer'
 import WalletItem from '../../components/walletItem/walletItem'
 

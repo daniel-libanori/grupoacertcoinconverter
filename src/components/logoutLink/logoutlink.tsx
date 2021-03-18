@@ -3,7 +3,6 @@ import React from 'react'
 import {styled} from '@material-ui/core'
 
 import TextAction from '../textLink/textAction'
-import { BorderBottom } from '@material-ui/icons'
 
 const StyledLogoutLink = styled("div")({
     

@@ -1,6 +1,5 @@
 import React from 'react'
 import {styled} from '@material-ui/core'
-import { BorderStyle } from '@material-ui/icons'
 
 const StyledMoneySymbol = styled("h3")({
     fontSize: "150px",

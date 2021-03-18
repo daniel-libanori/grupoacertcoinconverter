@@ -65,7 +65,7 @@ const NavBar : React.FC <INTFNavBar>= ({tabsAndLinks}) => {
       <StyledAdjustNavBar>
 
         {tabsAndLinks.map(({tab,link},index)=>{
-          return (window.location.pathname == link ?
+          return (window.location.pathname === link ?
             <StyledSelectedItemNavBar onClick={() => {onClickHandler(index)}} key={index}>{tab}</StyledSelectedItemNavBar> :
             <StyledItemNavBar onClick={() => {onClickHandler(index)}} key={index}>{tab}</StyledItemNavBar>)})}
 

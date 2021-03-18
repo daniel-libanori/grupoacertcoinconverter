@@ -2,7 +2,6 @@ import React from 'react'
 
 import MoneySymbol from "./moneySymbol"
 import VerticalItensContainer from '../containers/verticalItensContainer'
-import BorderValueShow from '../bordedValueShow/bordedValueShow'
 
 import {styled} from "@material-ui/core"
 import BordedValueShow from '../bordedValueShow/bordedValueShow'

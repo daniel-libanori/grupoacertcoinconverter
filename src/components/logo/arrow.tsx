@@ -1,9 +1,7 @@
-import react from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react'
 
 import image from '../../assets/Black_Right_Arrow.png'
 import {styled} from '@material-ui/core'
-import { transform } from 'typescript'
 
 const StyledImg = styled('img')({
     maxWidth: "200px",

@@ -1,4 +1,4 @@
-import React , {useContext, useCallback} from 'react'
+import React , {useCallback} from 'react'
 
 import VerticalItensContainer from '../../components/containers/verticalItensContainer'
 import CustomButton from '../../components/button/Button'
@@ -7,13 +7,11 @@ import TextLink from '../../components/textLink/textLink'
 
 import { Form } from 'react-final-form';
 
-import {Redirect, useHistory} from 'react-router-dom'
-import {AuthContext} from '../../contexts/authContext'
+import {useHistory} from 'react-router-dom'
 import fireBaseConfig from '../../firebase/firebase'
 
 const Signup : React.FC = () =>{
 
-    const context = useContext(AuthContext);
     const history = useHistory();
 
     const loginHandler = useCallback(
