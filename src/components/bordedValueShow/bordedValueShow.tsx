@@ -12,7 +12,9 @@ const StyledBorderValueShow = styled('div')({
     borderStyle: "solid",
     borderRadius: "20px",
 
-    fontSize: "27px"
+    fontSize: "27px",
+
+    marginBottom: "40px"
     
 })
 

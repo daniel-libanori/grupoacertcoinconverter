@@ -19,6 +19,7 @@ const StyledItemNavBar = styled("button")({
   borderWidth:"2px",
 
   fontSize: "18px",
+  textAlign: "center",
 
   margin: "3px 15px",
   padding: "0px 10px",
